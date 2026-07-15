@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "inter";
+    src: url("./assets/Inter.ttf") format("truetype");
+    font-display: swap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b3e1ff;
+    font-family: "inter", sans-serif;
+}
+
+/* Calculator style */
+#calculator {
+    background-color: #fff;
+    box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.08),
+    0 12px 30px rgba(0, 0, 0, 0.10);
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 26rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
+}
+
+/* Output style */
+#calculator #output {
+    width: 100%;
+}
+
+#calculator #output #display {
+    outline: none;
+    width: 100%;
+    font-size: 2.5rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 1.1rem;
+    border: 2px solid #6c6c6c;
+    direction: rtl;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#calculator #output #display::placeholder {
+    color: black;
+}
+
+/* Button container style */
+#calculator .button-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.1rem;
+}
+
+#calculator .button-container .btn {
+    width: 100%;
+    height: 4.4rem;
+    border-radius: 1.1rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #e7e7e7;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: "inter", sans-serif;
+}
+
+#calculator .button-container .btn.equal {
+    grid-column: span 2;
+}
+
+#calculator .button-container .btn[data-btn="delete"],
+#calculator .button-container .btn[data-btn="c"] {
+    background-color: #fe4545;
+    color: #fff;
+}
+
+#calculator .button-container .btn.operator {
+   background-color: #00d351;
+   color: #fff;
+}
+
+#calculator .button-container .btn:hover {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+}
+
+#calculator .button-container .btn:active {
+    transform: scale(0.95);
+}
